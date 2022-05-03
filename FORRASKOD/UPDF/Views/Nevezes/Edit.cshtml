@@ -1,0 +1,69 @@
+﻿@model UPDF.Models.Nevezes
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Nevezes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Azon" />
+            <div class="form-group">
+                <label asp-for="KoreoCim" class="control-label"></label>
+                <input asp-for="KoreoCim" class="form-control" />
+                <span asp-validation-for="KoreoCim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VersenyzoAzon" class="control-label"></label>
+                <select asp-for="VersenyzoAzon" class="form-control" asp-items="ViewBag.VersenyzoAzon"></select>
+                <span asp-validation-for="VersenyzoAzon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KorcsoportAzon" class="control-label"></label>
+                <select asp-for="KorcsoportAzon" class="form-control" asp-items="ViewBag.KorcsoportAzon"></select>
+                <span asp-validation-for="KorcsoportAzon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KategoriaAzon" class="control-label"></label>
+                <select asp-for="KategoriaAzon" class="form-control" asp-items="ViewBag.KategoriaAzon"></select>
+                <span asp-validation-for="KategoriaAzon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VersenySzamAzon" class="control-label"></label>
+                <select asp-for="VersenySzamAzon" class="form-control" asp-items="ViewBag.VersenySzamAzon"></select>
+                <span asp-validation-for="VersenySzamAzon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CsapatAzon" class="control-label"></label>
+                <select asp-for="CsapatAzon" class="form-control" asp-items="ViewBag.CsapatAzon"></select>
+                <span asp-validation-for="CsapatAzon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZenePath" class="control-label"></label>
+                <input asp-for="ZenePath" class="form-control" />
+                <span asp-validation-for="ZenePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RogzitoAzon" class="control-label"></label>
+                <select asp-for="RogzitoAzon" class="form-control" asp-items="ViewBag.RogzitoAzon"></select>
+                <span asp-validation-for="RogzitoAzon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

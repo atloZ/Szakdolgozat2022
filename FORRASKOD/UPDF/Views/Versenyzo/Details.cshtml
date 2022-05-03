@@ -1,0 +1,54 @@
+﻿@model UPDF.Models.Versenyzo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Versenyzo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nev)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nev)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SzulHely)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SzulHely)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SzulDatum)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SzulDatum)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EngedelySzam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EngedelySzam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EngedelyErv)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EngedelyErv)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EgyesuletAzonNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EgyesuletAzonNavigation.Azon)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.SirAzon">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

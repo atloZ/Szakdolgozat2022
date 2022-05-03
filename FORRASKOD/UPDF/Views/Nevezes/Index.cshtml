@@ -1,0 +1,76 @@
+﻿@model IEnumerable<UPDF.Models.Nevezes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VersenyzoAzonNavigation.Nev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CsapatAzonNavigation.Azon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KoreoCim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KategoriaAzonNavigation.Megnevezes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KorcsoportAzonNavigation.Megnevezes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VersenySzamAzonNavigation.Megnevezes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZenePath)
+            </th>
+            <th>
+                
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VersenyzoAzonNavigation.SirAzon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CsapatAzonNavigation.Azon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KoreoCim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KategoriaAzonNavigation.Azon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KorcsoportAzonNavigation.Azon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RogzitoAzonNavigation.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VersenySzamAzonNavigation.Azon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZenePath)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Azon">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Azon">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Azon">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

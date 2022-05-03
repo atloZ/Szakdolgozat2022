@@ -1,0 +1,62 @@
+﻿@model UPDF.Models.Nevezes
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Nevezes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KoreoCim" class="control-label"></label>
+                <input asp-for="KoreoCim" class="form-control" />
+                <span asp-validation-for="KoreoCim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VersenyzoAzon" class="control-label"></label>
+                <select asp-for="VersenyzoAzon" class ="form-control" asp-items="ViewBag.VersenyzoAzon"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="KorcsoportAzon" class="control-label"></label>
+                <select asp-for="KorcsoportAzon" class ="form-control" asp-items="ViewBag.KorcsoportAzon"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="KategoriaAzon" class="control-label"></label>
+                <select asp-for="KategoriaAzon" class ="form-control" asp-items="ViewBag.KategoriaAzon"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VersenySzamAzon" class="control-label"></label>
+                <select asp-for="VersenySzamAzon" class ="form-control" asp-items="ViewBag.VersenySzamAzon"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CsapatAzon" class="control-label"></label>
+                <select asp-for="CsapatAzon" class ="form-control" asp-items="ViewBag.CsapatAzon"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZenePath" class="control-label"></label>
+                <input asp-for="ZenePath" class="form-control" />
+                <span asp-validation-for="ZenePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RogzitoAzon" class="control-label"></label>
+                <select asp-for="RogzitoAzon" class ="form-control" asp-items="ViewBag.RogzitoAzon"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
